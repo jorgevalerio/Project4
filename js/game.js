@@ -1,11 +1,9 @@
 
  
 let gameBoard = document.getElementById('board');
+gameBoard.style.display = "none";
 
 let body = document.body;
-let welcomeMessage = document.createTextNode('<div class="screen screen-start" id="start"> <header> <h1>Tic Tac Toe</h1> <a href="#" class="button">Start game</a> </header> </div>');
-
-gameBoard.style.display = "none";
 
 let startScreen = document.createElement("div");
 startScreen.innerHTML = '<div class="screen screen-start" id="start"><header> <h1>Tic Tac Toe</h1><a href="#" class="button">Start game </a> </header></div>';
@@ -25,6 +23,36 @@ startButton[0].addEventListener("click", function(){
 let boxArray =  document.getElementsByClassName('box');
 console.log(boxArray);
 
+// Other screnns
+
+function winnerScreenDiv(whow) {
+gameBoard.style.display = "none";
+let winnerScreen = document.createElement("div");
+winnerScreen.innerHTML = '<div class="screen screen-win ' + whow +'" id="finish"><header> <h1>Tic Tac Toe</h1><p class="message"></p><a href="#" class="button">New game</a></header></div>';
+body.appendChild(winnerScreen);
+
+	
+}
+
+
+
+
+/*let winner0Screen = document.createElement("div");
+winner0Screen.innerHTML = '<div class="screen screen-win screen-win-one" id="finish"><header> <h1>Tic Tac Toe</h1><p class="message"></p><a href="#" class="button">New game</a></header></div>';
+body.appendChild(winner0Screen);
+winner0Screen.style.display = 'none';
+
+
+let winnerXScreen = document.createElement("div");
+winnerXScreen .innerHTML = '<div class="screen screen-win screen-win-two" id="finish"><header> <h1>Tic Tac Toe</h1><p class="message"></p><a href="#" class="button">New game</a></header></div>';
+body.appendChild(winnerXScreen);
+winnerXScreen.style.display = 'none';
+
+
+let winner0Screen = document.createElement("div");
+startScreen.innerHTML = '<div class="screen screen-win screen-win-tie" id="finish"><header> <h1>Tic Tac Toe</h1><p class="message"></p><a href="#" class="button">New game</a></header></div>';
+body.appendChild(winner0Screen);
+winner0Screen.style.display = 'none';*/
 
 
 //Array to letters
@@ -49,6 +77,7 @@ let player0Div = document.getElementById('player1');
 let playerX = false;
 let playerXDiv = document.getElementById('player2');
 
+
 if (player0 === true){
 	
 	player0Div.classList.add('active');
@@ -62,6 +91,46 @@ if (playerX === true){
 function hasClass(el, cls) {
   return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
 }
+
+
+
+
+		function isWinnerCheck(winNumber, whoWin) {
+  		let a= whoWin[0];
+		let b= whoWin[1];
+		let c= whoWin[2];
+		let d= whoWin[3];
+		let towin3 = 0;
+			
+			
+			
+			if( winNumber.includes(a) === true){
+				towin3+=1;
+			}
+						if( winNumber.includes(b) === true){
+				towin3+=1;
+							console.log(towin3);
+			}
+						if( winNumber.includes(c) === true){
+				towin3+=1;console.log(towin3);
+			}
+						if( winNumber.includes(d) === true){
+				towin3+=1;console.log(towin3);
+			}
+						
+						if (towin3 >= 3){
+							console.log('ultimate winner');
+							let towin3 = 0;
+							console.log(towin3);
+							
+							
+							console.log('winner winner winner');
+						let winner12 = 'screen-win-one';
+						winnerScreenDiv(winner12);
+							
+						}
+		}
+
 
 
 for (iofArrayBox = 0; iofArrayBox < boxArray.length; iofArrayBox++){
@@ -118,20 +187,33 @@ for (iofArrayBox = 0; iofArrayBox < boxArray.length; iofArrayBox++){
 				let winner = playsFor0.join('');
 				
 				
+			
+				
+				
+				
 				if (playsFor0.length >=3){
 					
 					
 					console.log(winner);
+					isWinnerCheck(win1, playsFor0);
+					isWinnerCheck(win2, playsFor0);
+					isWinnerCheck(win3, playsFor0);
+					isWinnerCheck(win4, playsFor0);
+					isWinnerCheck(win5, playsFor0);
+					isWinnerCheck(win6, playsFor0);
+					isWinnerCheck(win7, playsFor0);
+					isWinnerCheck(win8, playsFor0);
 					
 					
-					if(win1 === winner || win2 === winner ||win3 === winner ||win4 === winner ||win5 === winner ||win6 === winner ||win7 === winner ||win8 === winner){
-						console.log('winner winner winner');
-					}
+						
+					
 				}
 				
 			}
 			
 		} 
+		
+		
 		
 		else if (playerX === true && hasClass(this, "box-filled-1") === false && hasClass(this, "box-filled-2")===false){
 			
@@ -159,9 +241,20 @@ for (iofArrayBox = 0; iofArrayBox < boxArray.length; iofArrayBox++){
 					console.log(winner);
 					
 					
-					if(win1 === winner || win2 === winner ||win3 === winner ||win4 === winner ||win5 === winner ||win6 === winner ||win7 === winner ||win8 === winner){
-						console.log('xxx wiNNER');
-					}
+					isWinnerCheck(win1, playsForX);
+					isWinnerCheck(win2, playsForX);
+					isWinnerCheck(win3, playsForX);
+					isWinnerCheck(win4, playsForX);
+					isWinnerCheck(win5, playsForX);
+					isWinnerCheck(win6, playsForX);
+					isWinnerCheck(win7, playsForX);
+					isWinnerCheck(win8, playsForX);
+					
+					
+				
+						/*let winner12 = 'screen-win-two';
+						winnerScreenDiv(winner12);*/
+					
 				}
 				
 			}
