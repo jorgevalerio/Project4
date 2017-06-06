@@ -52,7 +52,7 @@
 		startButton[1].addEventListener("click", function(){
 			let finishDiv = document.getElementById('finish');
 			finishDiv.style.display = 'none';
-			console.log('s');
+			
 			startScreen.style.display = 'none';
 			gameBoard.style.display = 'block';
 			playsFor0 = [];
@@ -102,23 +102,23 @@
 
 		if( winNumber.includes(a) === true){
 					towin3+=1;
-			console.log('includes a')
+			
 				}
 		if( winNumber.includes(b) === true){
 					towin3+=1;		
-			console.log('includes b')
+			
 				}
 		if( winNumber.includes(c) === true){
 					towin3+=1;
-			console.log('includes c')
+		
 				}
 		if( winNumber.includes(d) === true){
 					towin3+=1;
-			console.log('includes d')
+		
 				}
 		if( winNumber.includes(e) === true){
 					towin3+=1;
-			console.log('includes e')
+		
 				}
 
 		if (towin3 >= 3){
@@ -175,21 +175,21 @@
 
 
 						isWinnerCheck(win1, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win2, playsFor0,'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win3, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win4, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win5, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win6, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win7, playsFor0, 'screen-win-one');
-					if(stopper == true){return;}
+					if(stopper === true){return;}
 						isWinnerCheck(win8, playsFor0, 'screen-win-one');
-					if(stopper == true){;return;}
+					if(stopper === true){return;}
 				}
 			} 
 
@@ -209,28 +209,28 @@
 
 								if (playsForX.length >=3){
 										isWinnerCheck(win1, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win2, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win3, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win4, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win5, playsForX,'screen-win-two');
-									if(stopper == true){;return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win6, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win7, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 										isWinnerCheck(win8, playsForX,'screen-win-two');
-									if(stopper == true){return;}
+									if(stopper === true){return;}
 									}			
 							}
 
 			} 
 
 			if (playsFor0.length === 5){
-					 console.log('last one was triggeres')
+					
 					gameBoard.style.display = "none";
 					let winnerScreen = document.createElement("div");
 					winnerScreen.innerHTML = '<div class="screen screen-win screen-win-tie" id="finish"><header> <h1>Tic Tac Toe</h1><p class="message">It\'s a Draw</p><a href="#" class="button">New game</a></header></div>';
@@ -249,7 +249,7 @@
 
 						let finishDiv = document.getElementById('finish');
 						finishDiv.style.display = 'none';
-						console.log('s');
+					
 						startScreen.style.display = 'none';
 						gameBoard.style.display = 'block';
 						playsFor0 = [];
